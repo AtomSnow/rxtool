@@ -6,11 +6,13 @@ class Program
     {
         Application.Init();
 
+        string name = "rxtool";
+        float ver = 0.0.0.0001;
         int width = 1280;
         int height = 720;
 
         // Create the main window
-        Window window = new Window($"rxtool");
+        Window window = new Window($"{name} {ver}");
 
         // Set the window's default size
         window.SetDefaultSize(width, height); 
