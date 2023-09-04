@@ -7,7 +7,7 @@ class Program
         Application.Init();
 
         string name = "rxtool";
-        float ver = 0.0.0.0001;
+        string ver = "0.0.0.0001";
         int width = 1280;
         int height = 720;
 
@@ -33,7 +33,23 @@ class Program
         // Handle button click event
         button.Clicked += (sender, e) =>
         {
-            label.Text = "Button Clicked!";
+            /*
+            var memoryPanel = new MemoryPanel();
+            memoryPanel.Entries.Add(new MemoryPanelEntry(1, 98.5, "FM"));
+            memoryPanel.Entries.Add(new MemoryPanelEntry(2, 102.0, "FM"));
+            memoryPanel.Entries.Add(new MemoryPanelEntry(3, 107.3, "FM"));
+            memoryPanel.Entries.Add(new MemoryPanelEntry(4, 540, "AM"));
+
+            string filePath = "memorypanel.rmem";
+            MemoryPanelFileHandler.SaveMemoryPanelToFile(memoryPanel, filePath);
+            MemoryPanel loadedMemoryPanel = MemoryPanelFileHandler.LoadMemoryPanelFromFile(filePath);
+            foreach (var entry in loadedMemoryPanel.Entries)
+            {
+                Console.WriteLine($"ID: {entry.Id}, Frequency: {entry.Frequency}, Data Type: {entry.DataType}");
+            }
+            */
+            LogHandler logHandler = new LogHandler();
+            logHandler.Log(LogStatus.INFO, "This is an informational message.");
         };
 
         window.ShowAll();
